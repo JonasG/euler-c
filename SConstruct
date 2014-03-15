@@ -9,7 +9,8 @@ SConscript([
 		'euler7/SConscript',
 		'euler8/SConscript',
 		'euler9/SConscript',
-		'euler10/SConscript'
+		'euler10/SConscript',
+		'euler11/SConscript'
 ])
 
 # TODO: Add some way of automatically verifying the result from running one of
