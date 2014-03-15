@@ -1,1 +1,1 @@
-Program('euler3.c')
+Program('euler3.c', CPPPATH=['#'], LIBPATH=['#eulerlib'], LIBS='eulerlib')

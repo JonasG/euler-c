@@ -4,43 +4,12 @@
  What is the largest prime factor of the number 600 851 475 143 ?
 */
 
+#include <eulerlib/primes.h>
+
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdint.h>
 #include <math.h>
-
-bool is_divisible_with_small_ints(uint64_t n)
-{
-    return (n % 2 == 0)
-        || (n % 3 == 0)
-        || (n % 4 == 0)
-        || (n % 6 == 0)
-        || (n % 8 == 0)
-        || (n % 9 == 0)
-        || (n % 10 == 0);
-}
-
-bool is_prime(uint64_t n)
-{
-    if (is_divisible_with_small_ints(n))
-    {
-        return false;
-    }
-    else
-    {
-        uint64_t to_check = ceil(sqrt(n));
-        
-        for (; to_check >= 2; to_check--)
-        {
-            if (n % to_check == 0)
-            {
-                return false;
-            }
-        }
-        
-        return true;
-    }
-}
 
 int main(int argc, const char * argv[])
 {

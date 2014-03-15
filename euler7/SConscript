@@ -1,0 +1,1 @@
+Program('euler7.c', CPPPATH=['#'], LIBPATH=['#eulerlib'], LIBS='eulerlib')
