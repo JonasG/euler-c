@@ -4,12 +4,40 @@
  What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 */
 
+#include <stdbool.h>
+#include <stdint.h>
 #include <stdio.h>
+
+#define MIN 1
+#define MAX 20
+
+bool is_divisible(uint32_t n, uint8_t min, uint8_t max)
+{
+	uint8_t i = 0;
+
+	for (i = min; i <= max; i++)
+	{
+		if (n % i != 0)
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
 
 int main(int argc, const char * argv[])
 {
-    // insert code here...
-    printf("Hello, World!\n");
-    return 0;
-}
+	uint32_t i = 0;
 
+	for (i = 1; i < 0xffffffff; i++)
+	{
+		if (is_divisible(i, MIN, MAX))
+		{
+			printf("Result: %u\n", i);
+			return 0;
+		}
+	}
+
+	return 1; // No result found
+}
